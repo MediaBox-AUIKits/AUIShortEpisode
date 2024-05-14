@@ -1,0 +1,13 @@
+include ':AUIShortEpisode'
+
+def withExternalPlayer = System.getenv("ANDROID_ENABLE_EXTERNALPLAYER")
+if (withExternalPlayer != 'false') {
+    include ':ExternalPlayerExoLibrary'
+}
+
+include ':AndroidThirdParty'
+
+include ':AUIVideoList:AUIVideoListCommon'
+include ':AUIVideoList:AUIVideoFunctionList'
+include ':AUIVideoList:AUIVideoStandradList'
+include ':AUIVideoList:AUIVideoEpisode'

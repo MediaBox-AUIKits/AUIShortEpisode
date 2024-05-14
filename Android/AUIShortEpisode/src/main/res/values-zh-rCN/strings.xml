@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">阿里云短剧</string>
+
+    <!--  aio  -->
+    <string name="player_title">播放器</string>
+    <string name="player_feed_flow">信息流播放</string>
+    <string name="player_video_list">沉浸式播放</string>
+    <string name="player_videolist_episode">短剧模式</string>
+    <string name="player_videolist_functionlist">性能模式</string>
+    <string name="player_videolist_standradlist">标准模式</string>
+    <string name="player_full_screen">全屏播放</string>
+    <string name="player_custom">自定义播放器</string>
+    <string name="player_episode">短剧</string>
+
+
+    <!--    -->
+    <string name="player_feed_flow_msg">适用于新闻咨询、社区互动等短视频场景</string>
+    <string name="player_feed_flow_function_msg">竖屏短视频场景，全屏秒开最佳实践</string>
+    <string name="player_feed_flow_standard_msg">竖屏短视频场景，标准实现</string>
+    <string name="player_video_list_msg">适用于多个视频间流畅切换的短视频场景</string>
+    <string name="player_video_full_screen_msg">适用于版权视频等长视频场景</string>
+    <string name="player_video_episode_msg">适用于短剧场景</string>
+
+
+    <string name="alivc_common_no_camera_permission">没有权限使用摄像头，请开启摄像头权限</string>
+    <string name="alivc_common_no_record_bluetooth_permission">没有权限使用蓝牙，请开启蓝牙权限</string>
+    <string name="alivc_common_no_record_audio_permission">没有权限使用录音，请开启录音权限</string>
+    <string name="alivc_common_no_read_phone_state_permission">没有读取用户数据的权限，请开启该权限</string>
+    <string name="alivc_common_no_read_external_storage_permission">没有文件读权限，请开启该权限</string>
+    <string name="alivc_common_no_write_external_storage_permission">没有文件写权限，请开启该权限</string>
+    <string name="alivc_recorder_camera_permission_tip">请开启摄像头/存储权限</string>
+</resources>

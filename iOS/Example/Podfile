@@ -1,0 +1,28 @@
+
+platform :ios, '10.0'
+workspace 'AUIShortEpisodeExample'
+
+def common_demo_pods
+end
+
+
+target 'Example' do
+  
+    # 根据自己的业务场景，集成合适SDK，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等，请使用最新的版本，可以从官网进行查询
+    pod 'AliPlayerSDK_iOS', '~> 6.10.0'
+
+    # 基础UI组件
+    pod "AUIFoundation", :path => "../AUIBaseKits/AUIFoundation"
+
+    # 短剧UI组件源码
+    pod 'AUIShortEpisode', :path => "../"
+    # 短剧依赖的SDK，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等
+    pod 'AUIShortEpisode/AliPlayerSDK_iOS', :path => "../"
+end
+
+post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
+        config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
+    end
+end
