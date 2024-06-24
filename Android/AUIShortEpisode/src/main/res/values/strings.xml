@@ -4,10 +4,10 @@
     <!--  aio  -->
     <string name="player_title">Player</string>
     <string name="player_feed_flow">Information Streaming</string>
-    <string name="player_video_list">Immersive Playback</string>
+    <string name="player_video_list">Home Page</string>
     <string name="player_videolist_episode">Episode</string>
-    <string name="player_videolist_functionlist">Function List</string>
-    <string name="player_videolist_standradlist">Standrad List</string>
+<!--    <string name="player_videolist_functionlist">Function List</string>-->
+<!--    <string name="player_videolist_standradlist">Standrad List</string>-->
     <string name="player_full_screen">Full-screen Playback</string>
     <string name="player_custom">Custom</string>
     <string name="player_episode">Episode</string>

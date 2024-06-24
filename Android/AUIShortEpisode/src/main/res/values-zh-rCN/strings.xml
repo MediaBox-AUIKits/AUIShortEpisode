@@ -4,10 +4,10 @@
     <!--  aio  -->
     <string name="player_title">播放器</string>
     <string name="player_feed_flow">信息流播放</string>
-    <string name="player_video_list">沉浸式播放</string>
+    <string name="player_video_list">首页</string>
     <string name="player_videolist_episode">短剧模式</string>
-    <string name="player_videolist_functionlist">性能模式</string>
-    <string name="player_videolist_standradlist">标准模式</string>
+<!--    <string name="player_videolist_functionlist">性能模式</string>-->
+<!--    <string name="player_videolist_standradlist">标准模式</string>-->
     <string name="player_full_screen">全屏播放</string>
     <string name="player_custom">自定义播放器</string>
     <string name="player_episode">短剧</string>

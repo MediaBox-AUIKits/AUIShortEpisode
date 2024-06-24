@@ -10,6 +10,7 @@
     <com.aliyun.auishortepisode.view.AVActionBar
         android:id="@+id/av_base_title"
         style="@style/BaseActionBar_Style"
+        android:layout_height="44dp"
         tools:leftImageSrc="@drawable/ic_av_action_bar_back"
         tools:rightImageSrc="@drawable/ic_actionbar_more"
         tools:showLeftView="false"

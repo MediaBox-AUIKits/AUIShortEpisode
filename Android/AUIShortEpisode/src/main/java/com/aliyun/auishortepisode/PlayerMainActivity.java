@@ -14,8 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
 import com.alivc.auiplayer.videoepisode.AUIEpisodePlayerActivity;
-import com.alivc.player.videolist.auivideofunctionlist.AUIVideoFunctionListActivity;
-import com.alivc.player.videolist.auivideostandradlist.AUIVideoStandardListActivity;
 import com.aliyun.auishortepisode.utils.PermissionUtils;
 import com.aliyun.auishortepisode.view.AVBaseListActivity;
 
@@ -26,10 +24,8 @@ public class PlayerMainActivity extends AVBaseListActivity {
 
     private static final int REQUEST_PERMISSION_STORAGE = 0x0001;
 
-    private static final int INDEX_VIDEO_LIST_FUNCTION = 1;
-    private static final int INDEX_VIDEO_LIST_STANDARD = 2;
     private static final int INDEX_VIDEO_LIST_SHORT = 3;
-    private static final int INDEX_CUSTOM = 5;
+
 
     private ListModel mListModel;
 
@@ -53,9 +49,6 @@ public class PlayerMainActivity extends AVBaseListActivity {
     public List<ListModel> createListData() {
         List<ListModel> menu = new ArrayList<>();
         menu.add(new ListModel(INDEX_VIDEO_LIST_SHORT, R.drawable.ic_player_chenjin, getResources().getString(R.string.player_videolist_episode), getResources().getString(R.string.player_video_episode_msg)));
-        menu.add(new ListModel(INDEX_VIDEO_LIST_FUNCTION, R.drawable.ic_player_chenjin, getResources().getString(R.string.player_videolist_functionlist), getResources().getString(R.string.player_feed_flow_function_msg)));
-        menu.add(new ListModel(INDEX_VIDEO_LIST_STANDARD, R.drawable.ic_player_quanping, getResources().getString(R.string.player_videolist_standradlist), getResources().getString(R.string.player_feed_flow_standard_msg)));
-//        menu.add(new ListModel(INDEX_CUSTOM, R.drawable.ic_player_zidingyi, getResources().getString(R.string.player_custom), null));
         return menu;
     }
 
@@ -97,25 +90,11 @@ public class PlayerMainActivity extends AVBaseListActivity {
 
     private void onModelItemClick(ListModel model) {
         switch (model.index) {
-            case INDEX_VIDEO_LIST_FUNCTION: {
-                Intent videoListIntent = new Intent(this, AUIVideoFunctionListActivity.class);
-                startActivity(videoListIntent);
-                break;
-            }
-            case INDEX_VIDEO_LIST_STANDARD: {
-                Intent videoListIntent = new Intent(this, AUIVideoStandardListActivity.class);
-                startActivity(videoListIntent);
-                break;
-            }
             case INDEX_VIDEO_LIST_SHORT: {
                 Intent videoListIntent = new Intent(this, AUIEpisodePlayerActivity.class);
                 startActivity(videoListIntent);
                 break;
             }
-            case INDEX_CUSTOM:
-//                    Intent videoDetailIntent = new Intent(this, AUIVideoConfigActivity.class);
-//                    startActivity(videoDetailIntent);
-                break;
         }
     }
 

@@ -25,13 +25,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.aliyun.auishortepisode.AUIShortEpisodeMainActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
-
-        </activity>
-
         <!--    配置license    -->
         <meta-data
             android:name="com.aliyun.alivc_license.licensekey"

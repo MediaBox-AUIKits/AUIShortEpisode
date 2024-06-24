@@ -1,6 +1,4 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion androidCompileSdkVersion
@@ -10,7 +8,9 @@ android {
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        versionCode 1
+        versionName "1.0"
+
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -27,5 +27,5 @@ android {
 }
 
 dependencies {
-    implementation project(':AUIVideoList:AUIVideoListCommon')
+    implementation project(':AUIVideoListCommon')
 }

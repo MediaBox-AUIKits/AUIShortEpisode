@@ -7,7 +7,5 @@ if (withExternalPlayer != 'false') {
 
 include ':AndroidThirdParty'
 
-include ':AUIVideoList:AUIVideoListCommon'
-include ':AUIVideoList:AUIVideoFunctionList'
-include ':AUIVideoList:AUIVideoStandradList'
-include ':AUIVideoList:AUIVideoEpisode'
+include ':AUIVideoListCommon'
+include ':AUIVideoEpisode'
