@@ -35,6 +35,7 @@
 ## 跑通demo
 
 - 源码下载后，进入Example目录
+- 修改Podfile中依赖的播放器SDK为最新版本，版本号参考[iOS播放器SDK](https://help.aliyun.com/zh/vod/developer-reference/release-notes-for-apsaravideo-player-sdk-for-ios)
 - 在Example目录里执行命令“pod install  --repo-update”，自动安装依赖SDK
 - 打开工程文件“AUIShortEpisodeExample.xcworkspace”，修改包Id
 - 在控制台上申请试用License，开通播放器能力，获取License文件和LicenseKey，如果已开通License直接进入下一步
@@ -48,7 +49,7 @@
 ### 集成源码
 - 导入AUIShortEpisode：仓库代码下载后，拷贝iOS文件夹到你的APP代码目录下，与你的Podfile文件在同一层级，改名为AUIShortEpisode，可以删除Example目录
 - 修改你的Podfile，引入：
-  - AliPlayerSDK_iOS：阿里视频云播放器SDK，如果已经同时使用了阿里视频云的其他SDK（例如短视频SDK、直播推流SDK），那么可以替换为音视频终端SDK：AliVCSDK_UGC（播放器+短视频）、AliVCSDK_InteractiveLive（播放器+直播）、AliVCSDK_Standard（全量包），参考[快速集成](https://help.aliyun.com/document_detail/2412571.htm)
+  - AliPlayerSDK_iOS：阿里视频云播放器SDK，最近使用最新版本，版本号参考[iOS播放器SDK](https://help.aliyun.com/zh/vod/developer-reference/release-notes-for-apsaravideo-player-sdk-for-ios)。如果已经同时使用了阿里视频云的其他SDK（例如短视频SDK、直播推流SDK），那么可以替换为音视频终端SDK：AliVCSDK_UGC（播放器+短视频）、AliVCSDK_InteractiveLive（播放器+直播）、AliVCSDK_Standard（全量包），参考[快速集成](https://help.aliyun.com/document_detail/2412571.htm)
   - AUIFoundation：基础UI组件
   - AUIShortEpisode：短剧场景UI组件源码
 ```ruby
@@ -58,14 +59,14 @@ platform :ios, '10.0'
 
 target '你的App target' do
     # 根据自己的业务场景，集成合适SDK，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等，请使用最新的版本，可以从官网进行查询
-    pod 'AliPlayerSDK_iOS', '~> 6.10.0'
+    pod 'AliPlayerSDK_iOS', '~> x.x.x'
   
     # 基础UI组件
     pod 'AUIFoundation', :path => "./AUIShortEpisode/AUIBaseKits/AUIFoundation/"
   
     # 短剧UI组件源码
     pod 'AUIShortEpisode/AUI', :path => "./AUIShortEpisode/"
-    # 短剧依赖的SDK，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等
+    # 短剧依赖的SDK，需要与集成的SDK对应，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等
     pod 'AUIShortEpisode/AliPlayerSDK_iOS', :path => "./AUIShortEpisode/"
 end
 ```

@@ -9,14 +9,14 @@ end
 target 'Example' do
   
     # 根据自己的业务场景，集成合适SDK，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等，请使用最新的版本，可以从官网进行查询
-    pod 'AliPlayerSDK_iOS', '~> 6.10.0'
+    pod 'AliPlayerSDK_iOS', '~> 6.11.0'
 
     # 基础UI组件
     pod "AUIFoundation", :path => "../AUIBaseKits/AUIFoundation"
 
     # 短剧UI组件源码
     pod 'AUIShortEpisode', :path => "../"
-    # 短剧依赖的SDK，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等
+    # 短剧依赖的SDK，需要与集成的SDK对应，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等
     pod 'AUIShortEpisode/AliPlayerSDK_iOS', :path => "../"
 end
 
