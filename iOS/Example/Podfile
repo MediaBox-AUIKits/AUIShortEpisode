@@ -9,7 +9,7 @@ end
 target 'Example' do
   
     # 根据自己的业务场景，集成合适SDK，支持：AliPlayerSDK_iOS、AliVCSDK_UGC、AliVCSDK_InteractiveLive、AliVCSDK_Standard等，请使用最新的版本，可以从官网进行查询
-    pod 'AliPlayerSDK_iOS', '~> 6.11.0'
+    pod 'AliPlayerSDK_iOS', '~> 6.12.0'
 
     # 基础UI组件
     pod "AUIFoundation", :path => "../AUIBaseKits/AUIFoundation"

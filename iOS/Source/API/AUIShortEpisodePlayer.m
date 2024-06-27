@@ -49,7 +49,6 @@
 
     [self enablePreloadStrategy:YES param:@"{\"algorithm\":\"sub\",\"offset\":\"500\"}"];
     [self enableLocalCache:YES];
-    [self enableHttpDns:YES];
     
     for (AUIVideoInfo *model in self.episodeData.list) {
         [self.listPlayer addUrlSource:model.url uid:model.uid];
@@ -72,13 +71,6 @@
         config.enableLocalCache = YES;
         [self.listPlayer setConfig:config];
     }
-}
-
-- (void)enableHttpDns:(BOOL)enable {
-    [AliPlayerGlobalSettings enableHttpDns:enable];
-    AVPConfig *config = [self.listPlayer getConfig];
-    config.enableHttpDns = -1;
-    [self.listPlayer setConfig:config];
 }
 
 - (void)destroyPlayer {
