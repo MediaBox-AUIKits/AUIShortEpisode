@@ -28,10 +28,10 @@
         <!--    配置license    -->
         <meta-data
             android:name="com.aliyun.alivc_license.licensekey"
-            android:value="no80rm6m8ayTXNTk80637a6cdef2a482588e104c17b8993c7" />
+            android:value="" />
         <meta-data
             android:name="com.aliyun.alivc_license.licensefile"
-            android:value="assets/cert/AliVideoCert-com_aliyun_auishortepisode-20240513140803.crt" />
+            android:value="" />
 
     </application>
 

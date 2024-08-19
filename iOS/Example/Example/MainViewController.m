@@ -21,12 +21,12 @@
     // Do any additional setup after loading the view.
         
     AVBlockButton *btn = [AVBlockButton new];
-    [btn setTitle:@"进入短剧" forState:UIControlStateNormal];
+    [btn setTitle:AVLocalization.isInternational ? @"Short Play" : @"短剧" forState:UIControlStateNormal];
     [btn setTitleColor:AVTheme.text_strong forState:UIControlStateNormal];
     btn.backgroundColor = AVTheme.colourful_fill_strong;
     [self.view addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_greaterThanOrEqualTo(100);
+        make.width.mas_greaterThanOrEqualTo(200);
         make.height.mas_equalTo(40);
         make.center.equalTo(self.view);
     }];

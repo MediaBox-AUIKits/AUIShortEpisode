@@ -18,12 +18,16 @@ NSString * const AUI_EPISODE_TEST_ENCRYPT = @"https://alivc-demo-cms.alicdn.com/
 + (void)fetchData:(NSString *)eid completed:(void (^)(AUIShortEpisodeData *, NSError *))completed {
     // TODO: 请求服务端返回短剧数据，此次是仅模拟，有需要请自身实现
     NSString *url = AUI_EPISODE_TEST;
+    
+    if (AVLocalization.isInternational) {
+        url = [url stringByReplacingOccurrencesOfString:@".json" withString:@"_en.json"];
+    }
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] init];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"请求剧集列表数据失败：%@", error);
+            NSLog(@"Failed to request data: %@", error);
             if (completed) {
                 completed(nil, error);
             }
@@ -31,7 +35,7 @@ NSString * const AUI_EPISODE_TEST_ENCRYPT = @"https://alivc-demo-cms.alicdn.com/
         else {
             NSDictionary *jsonDictionary = responseObject;
             if ([jsonDictionary isKindOfClass:NSDictionary.class]) {
-                NSLog(@"请求剧集列表数据成功：%@", jsonDictionary);
+                NSLog(@"Request data success: %@", jsonDictionary);
                 AUIShortEpisodeData *episode = [[AUIShortEpisodeData alloc] initWithDict:jsonDictionary];
                 if (completed) {
                     completed(episode, nil);
@@ -39,7 +43,7 @@ NSString * const AUI_EPISODE_TEST_ENCRYPT = @"https://alivc-demo-cms.alicdn.com/
             }
             else {
                 NSError *jsonError = [NSError errorWithDomain:@"error" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"response data error"}];
-                NSLog(@"请求剧集列表数据失败：：%@", jsonError);
+                NSLog(@"Failed to request data: %@", jsonError);
                 if (completed) {
                     completed(nil, jsonError);
                 }

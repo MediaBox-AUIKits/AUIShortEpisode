@@ -36,11 +36,11 @@
     [self.collectionView registerClass:AUIShortEpisodePlayCell.class forCellWithReuseIdentifier:AVCollectionViewCellIdentifier];
     
     AVProgressHUD *loading = [AVProgressHUD ShowHUDAddedTo:self.view animated:YES];
-    loading.labelText = SEString(@"加载中...");
+    loading.labelText = SEString(@"Loading...");
     [AUIShortEpisodeDataManager fetchData:@"123" completed:^(AUIShortEpisodeData * _Nullable data, NSError * _Nullable error) {
         [loading hideAnimated:YES];
         if (error) {
-            [AVToastView show:SEString(@"无法拉取播放列表，播放失败") view:self.view position:AVToastViewPositionMid];
+            [AVToastView show:SEString(@"Unable to retrieve playlist, playback failed.") view:self.view position:AVToastViewPositionMid];
         }
         else {
             [self startPlay:data];
@@ -103,7 +103,7 @@
         }
     }
     else {
-        NSAssert(NO, @"当前要播放的cell还未展示");
+        NSAssert(NO, @"Playing cell is nil");
         [self.episodePlayer stop];
     }
 }
@@ -182,11 +182,11 @@
     };
     cell.onCommentBtnClickBlock = ^(AUIShortEpisodePlayCell * _Nonnull cell, AVBaseButton *commentBtn) {
         // TODO: 打开评论页面，需要自己实现
-        [AVToastView show:SEString(@"暂不支持该功能，需要自己实现") view:weakSelf.view position:AVToastViewPositionMid];
+        [AVToastView show:SEString(@"This feature is not supported yet and needs to be implemented.") view:weakSelf.view position:AVToastViewPositionMid];
     };
     cell.onShareBtnClickBlock = ^(AUIShortEpisodePlayCell * _Nonnull cell, AVBaseButton *shareBtn) {
         // TODO: 打开分享页面，需要自己实现
-        [AVToastView show:SEString(@"暂不支持改功能，需要自己实现") view:weakSelf.view position:AVToastViewPositionMid];
+        [AVToastView show:SEString(@"This feature is not supported yet and needs to be implemented.") view:weakSelf.view position:AVToastViewPositionMid];
     };
     cell.onEntranceViewClickBlock = ^(AUIShortEpisodePlayCell * _Nonnull cell) {
         [AUIShortEpisodeListPanel setPanelHeight:weakSelf.episodeData max:weakSelf.contentView.av_height * 3 / 5.0];

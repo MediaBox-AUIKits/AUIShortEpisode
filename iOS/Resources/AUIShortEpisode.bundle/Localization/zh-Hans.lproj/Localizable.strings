@@ -1,1 +1,4 @@
 
+"Loading..." = "加载中...";
+"Unable to retrieve playlist, playback failed." = "无法拉取播放列表，播放失败";
+"This feature is not supported yet and needs to be implemented." = "暂不支持该功能，需要自己实现";
